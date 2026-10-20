@@ -28,7 +28,8 @@ if(staticMode){
   document.querySelector('#coe .badge').textContent='Directorio institucional';
 }
 
-const riskViewer=document.querySelector('.risk-viewer');
-riskViewer.addEventListener('toggle',()=>{
-  if(riskViewer.open){const frame=riskViewer.querySelector('iframe');if(!frame.getAttribute('src'))frame.src=frame.dataset.src;}
+document.querySelectorAll('.risk-viewer').forEach(viewer=>{
+  viewer.addEventListener('toggle',()=>{
+    if(viewer.open){const frame=viewer.querySelector('iframe');if(!frame.getAttribute('src'))frame.src=frame.dataset.src;}
+  });
 });

@@ -43,3 +43,7 @@ La página incorpora un visor externo de Bing Maps centrado en Guayaquil y un en
 ### Servicio de Gestión de Riesgos
 
 Se enlaza el servicio `SUSCEPT_INUNDACIONES_Z/MapServer` de `sgrportal.gestionderiesgos.gob.ec`, aportado por el usuario. La sección permite abrir su visor `?f=jsapi` dentro de un panel o en otra pestaña y consultar sus metadatos `?f=pjson`. El iframe solo se activa al desplegar el panel. No se descargan ni se reinterpretan capas; no se supone cobertura, fecha, leyenda ni estado de alerta sin consultar los metadatos del proveedor. La susceptibilidad territorial no representa una inundación actual. El entorno bloqueó la consulta de este host, por lo que la carga externa y la posibilidad de incrustación no se verificaron. El acceso directo sigue disponible si el proveedor restringe los iframes.
+
+### Visor hidrometeorológico INAMHI
+
+La sección INAMHI enlaza `https://inamhi.gob.ec/info/visor/` y permite intentar abrirlo bajo demanda dentro de la página. No se extraen mediciones ni se generan pronósticos. El proveedor controla sus datos, fechas y acceso. La consulta desde este entorno fue bloqueada; no se ha confirmado que permita incrustación. Si el visor no carga, se ofrece el enlace directo en otra pestaña. El directorio institucional apunta ahora a los visores proporcionados de INAMHI y SGR.

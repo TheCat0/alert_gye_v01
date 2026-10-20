@@ -24,7 +24,7 @@ const response=await post({...valid,photo});assert.equal(response.status,201);co
 let rows=await (await fetch(base+'/api/reports')).json();assert.equal(rows.length,1);assert.equal(rows[0].sector,'Urdesa');assert.equal(rows[0].has_photo,1);assert.equal(rows[0].photo,undefined);
 const image=await fetch(base+`/api/reports/${saved.id}/photo`);assert.equal(image.headers.get('content-type'),'image/png');assert.ok((await image.arrayBuffer()).byteLength>0);
 child.kill();await once(child,'exit');await start();rows=await (await fetch(base+'/api/reports')).json();assert.equal(rows[0].id,saved.id);
-const sources=await (await fetch(base+'/api/sources')).json();assert.equal(sources.length,5);assert.ok(sources.every(s=>s.status.includes('Sin conexión')));
+const sources=await (await fetch(base+'/api/sources')).json();assert.equal(sources.length,5);assert.equal(sources.find(s=>s.name==='INAMHI').url,'https://inamhi.gob.ec/info/visor/');assert.ok(sources.find(s=>s.name==='SNGR').url.includes('SUSCEPT_INUNDACIONES_Z/MapServer?f=jsapi'));assert.ok(sources.filter(s=>!['INAMHI','SNGR'].includes(s.name)).every(s=>s.status.includes('Sin conexión')));
 assert.equal((await fetch(base+'/../server.js')).status,404);
 assert.equal((await fetch(base+'/')).status,200);
 });
