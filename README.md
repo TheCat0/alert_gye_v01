@@ -47,3 +47,7 @@ Se enlaza el servicio `SUSCEPT_INUNDACIONES_Z/MapServer` de `sgrportal.gestionde
 ### Visor hidrometeorológico INAMHI
 
 La sección INAMHI enlaza `https://inamhi.gob.ec/info/visor/` y permite intentar abrirlo bajo demanda dentro de la página. No se extraen mediciones ni se generan pronósticos. El proveedor controla sus datos, fechas y acceso. La consulta desde este entorno fue bloqueada; no se ha confirmado que permita incrustación. Si el visor no carga, se ofrece el enlace directo en otra pestaña. El directorio institucional apunta ahora a los visores proporcionados de INAMHI y SGR.
+
+### Tráfico en vivo · Waze
+
+La sección de movilidad incorpora el visor oficial `https://embed.waze.com/iframe`, centrado en Guayaquil (latitud -2.1894, longitud -79.8891, zoom 12). Se carga al desplegar el panel. El botón de Vía Perimetral conserva la dirección completa proporcionada por el usuario; también hay un enlace al mapa general de Waze. No se extraen datos ni se almacenan rutas. El contenido, su actualización y disponibilidad dependen de Waze y no representan una confirmación de seguridad ante inundaciones ni datos institucionales de ATM. El acceso externo está bloqueado en este entorno, por lo que no se ha verificado el contenido del proveedor; los enlaces directos son una alternativa a la incrustación.

@@ -60,3 +60,5 @@ button:disabled{cursor:not-allowed}.intro .primary:disabled{opacity:1;background
 
 .sidebar{overflow-y:auto}.weather-service{border-top-color:var(--blue)}.weather-service .eyebrow{color:var(--blue)}
 .weather-service .risk-context{background:#edf4ff;border-color:var(--blue)}.weather-service .risk-context strong{color:#234b86}.weather-service .risk-context p{color:#506b93}
+
+.traffic-service{border-top-color:var(--blue)}.traffic-service .eyebrow{color:var(--blue)}.traffic-service .risk-context{background:#edf4ff;border-color:var(--blue)}.traffic-service .risk-context strong{color:#234b86}.traffic-service .risk-context p{color:#506b93}
