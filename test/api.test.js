@@ -1,0 +1,30 @@
+import {test,before,after} from 'node:test';
+import assert from 'node:assert/strict';
+import {spawn} from 'node:child_process';
+import {mkdtempSync,rmSync} from 'node:fs';
+import {tmpdir} from 'node:os';
+import {join} from 'node:path';
+import {once} from 'node:events';
+import net from 'node:net';
+const dir=mkdtempSync(join(tmpdir(),'alerta-test-'));
+let child,base,port;
+async function start(){child=spawn(process.execPath,['server.js'],{env:{...process.env,PORT:String(port),DB_PATH:join(dir,'reports.sqlite')},stdio:['ignore','pipe','pipe']});await Promise.race([once(child.stdout,'data'),once(child,'exit').then(()=>{throw Error('Servidor detenido antes de arrancar')})]);}
+before(async()=>{const socket=net.createServer();socket.listen(0,'127.0.0.1');await once(socket,'listening');port=socket.address().port;await new Promise(r=>socket.close(r));base=`http://127.0.0.1:${port}`;await start()});
+after(async()=>{if(child?.exitCode===null){child.kill();await once(child,'exit')}rmSync(dir,{recursive:true,force:true})});
+const valid={type:'Inundación',sector:'Urdesa',description:'Acumulación de agua en la intersección.',lat:-2.17,lng:-79.92};
+const post=data=>fetch(base+'/api/reports',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+test('API, validación, fotografía y persistencia al reiniciar',async()=>{
+assert.equal((await fetch(base+'/api/health')).status,200);
+assert.deepEqual(await (await fetch(base+'/api/reports')).json(),[]);
+assert.equal((await post({...valid,lat:0})).status,400);
+assert.equal((await post({...valid,description:'corto'})).status,400);
+assert.equal((await post({...valid,photo:'data:image/svg+xml;base64,AAAA'})).status,400);
+const photo='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jRZkAAAAASUVORK5CYII=';
+const response=await post({...valid,photo});assert.equal(response.status,201);const saved=await response.json();assert.equal(saved.status,'Pendiente');
+let rows=await (await fetch(base+'/api/reports')).json();assert.equal(rows.length,1);assert.equal(rows[0].sector,'Urdesa');assert.equal(rows[0].has_photo,1);assert.equal(rows[0].photo,undefined);
+const image=await fetch(base+`/api/reports/${saved.id}/photo`);assert.equal(image.headers.get('content-type'),'image/png');assert.ok((await image.arrayBuffer()).byteLength>0);
+child.kill();await once(child,'exit');await start();rows=await (await fetch(base+'/api/reports')).json();assert.equal(rows[0].id,saved.id);
+const sources=await (await fetch(base+'/api/sources')).json();assert.equal(sources.length,5);assert.ok(sources.every(s=>s.status.includes('Sin conexión')));
+assert.equal((await fetch(base+'/../server.js')).status,404);
+assert.equal((await fetch(base+'/')).status,200);
+});
