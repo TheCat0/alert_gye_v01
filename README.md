@@ -35,3 +35,7 @@ Esta versión permite desarrollar y probar el flujo ciudadano. Un despliegue pú
 ### Publicación en GitHub Pages
 
 El flujo `.github/workflows/pages.yml` publica la versión informativa desde `main`. En **Settings → Pages**, selecciona **GitHub Actions**. Consulta [PUBLICAR.md](PUBLICAR.md) para los pasos y limitaciones. El sitio estático se genera con `npm run build:pages`; no recibe reportes ni conecta con SQLite. La aplicación completa se conserva para alojamientos con Node.js.
+
+### Cartografía de Guayaquil
+
+La página incorpora un visor externo de Bing Maps centrado en Guayaquil y un enlace para abrir el mapa en otra pestaña. El visor necesita acceso del navegador a los servicios de Microsoft; su disponibilidad depende del proveedor. No recibe coordenadas de los reportes ni muestra alertas institucionales. La vista esquemática de los reportes se mantiene separada. También se conserva el enlace de Microsoft facilitado por el usuario como referencia; su redirección no pudo verificarse desde el entorno.
