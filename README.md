@@ -55,3 +55,7 @@ La sección de movilidad incorpora el visor oficial `https://embed.waze.com/ifra
 ### Presentación con 10 reportes simulados
 
 GitHub Pages carga `public/demo-reports.json`: 10 casos ficticios de 10 sectores, con 4 pendientes, 3 verificados, 2 en atención y 1 resuelto, todos simulados. No son emergencias actuales, actividad ciudadana real, validación institucional ni resultados del proyecto. El aviso superior, cada fila y cada detalle identifican la demostración. El mapa y el listado se colocan antes de los visores externos y los filtros funcionan sobre ambos. No se inventan fotografías. Los datos nunca se insertan en SQLite ni se mezclan con reportes reales. Para presentar el mismo modo con el servidor local, agrega `?demo=1` a la dirección de la aplicación; sin ese parámetro el servidor conserva el flujo real. La versión estática permanece en modo demostración por defecto.
+
+### Referencia periodística · El Heraldo
+
+Se añadió el enlace aportado a `https://www.elheraldo.com.ec/inundaciones-en-guayaquil-por-fuertes-lluvias/`, en una sección de prensa independiente de los reportes ficticios y de las alertas. La consulta desde el entorno devolvió 403, por lo que no se extrajeron ni verificaron el texto, la fecha, los sectores ni las cifras. No se asignan coordenadas, estados de verificación ni vigencia al artículo, y no se incorpora a los contadores de reportes ciudadanos. Para añadir datos concretos con atribución, hace falta acceder al texto o recibirlo del usuario.
