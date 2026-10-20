@@ -65,7 +65,7 @@ if(demoMode){
   document.querySelector('#mapa .card-heading p').textContent='Ubicaciones aproximadas de ejemplo · mapa esquemático';
   document.querySelector('#mapa .legend').replaceChildren(node('span','● Pendiente simulado'),node('span','● Otros estados simulados'),node('span','Datos ficticios · sin validación institucional'));
   document.querySelector('#coe .badge').textContent='Directorio institucional';
-  document.querySelector('.stats').after(document.querySelector('.dashboard'),document.querySelector('#reportes'));
+  document.querySelector('.stats').after(document.querySelector('.dashboard'),document.querySelector('#reportes'),document.querySelector('#referencias-prensa'));
   fetch('./demo-reports.json?v=1').then(r=>{if(!r.ok)throw Error('No se pudieron cargar los casos de demostración.');return r.json()}).then(data=>{
     if(data.demo!==true||!Array.isArray(data.reports)||data.reports.length!==10||!data.reports.every(r=>r.simulated===true))throw Error('Los datos de demostración no son válidos.');
     reports=data.reports;render();
