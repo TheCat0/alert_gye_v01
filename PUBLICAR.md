@@ -42,4 +42,4 @@ La dirección esperada para este repositorio, si no hay un dominio personalizado
 
 Para preparar el mismo sitio manualmente: `npm run build:pages`. La carpeta `dist/` solo contiene recursos públicos; no contiene SQLite, fotografías ni el servidor.
 
-GitHub Pages muestra prevención, el mapa esquemático y las fuentes oficiales. Identifica claramente la versión como informativa y desactiva los reportes y sus contadores, porque Pages no ejecuta Node.js ni SQLite. La aplicación completa sigue disponible mediante `npm start` en un alojamiento compatible.
+GitHub Pages muestra prevención, el mapa esquemático y las fuentes oficiales. La presentación muestra 10 casos ficticios, contadores y marcadores señalados como simulados; la recepción de reportes reales permanece desactivada porque Pages no ejecuta Node.js ni SQLite. La aplicación completa sigue disponible mediante `npm start` en un alojamiento compatible.

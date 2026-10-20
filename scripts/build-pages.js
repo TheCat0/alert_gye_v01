@@ -20,4 +20,4 @@ writeFileSync(out+'/index.html',html);
 writeFileSync(out+'/.nojekyll','');
 const sources=[['INAMHI','Meteorología y pronósticos','https://inamhi.gob.ec/info/visor/'],['Segura EP','Seguridad y gestión de riesgos','https://seguraep.gob.ec/'],['ATM','Tránsito y movilidad','https://www.atm.gob.ec/'],['Municipio de Guayaquil','Drenaje y obras preventivas','https://www.guayaquil.gob.ec/'],['SNGR','Alertas y gestión de riesgos','https://sgrportal.gestionderiesgos.gob.ec/server/rest/services/SUSCEPT_INUNDACIONES_Z/MapServer?f=jsapi']].map(([name,description,url])=>({name,description,url,status:['INAMHI','SNGR'].includes(name)?'Visor externo enlazado · consulta en el proveedor':'Enlace de consulta · sin conexión de datos'}));
 writeFileSync(out+'/sources.json',JSON.stringify(sources));
-console.log('Versión informativa para GitHub Pages creada en dist/. No incluye datos ciudadanos ni API.');
+console.log('Presentación para GitHub Pages creada en dist/: 10 reportes ficticios señalados como demostración, sin datos ciudadanos reales ni API.');

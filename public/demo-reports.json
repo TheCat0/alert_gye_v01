@@ -1,0 +1,126 @@
+{
+  "demo": true,
+  "notice": "Datos ficticios para presentación. No representan incidentes reales ni validación institucional.",
+  "reports": [
+    {
+      "id": "demo-001",
+      "type": "Inundación",
+      "sector": "Urdesa Central",
+      "description": "Ejemplo: acumulación de agua en una intersección del sector; se plantea una inspección de drenaje.",
+      "lat": -2.164,
+      "lng": -79.922,
+      "status": "Pendiente",
+      "created_at": "2026-10-20T14:40:00-05:00",
+      "has_photo": 0,
+      "simulated": true
+    },
+    {
+      "id": "demo-002",
+      "type": "Alcantarilla obstruida",
+      "sector": "Alborada",
+      "description": "Ejemplo: residuos visibles sobre una rejilla de drenaje. Caso para demostrar el flujo de revisión.",
+      "lat": -2.124,
+      "lng": -79.907,
+      "status": "Verificado",
+      "created_at": "2026-10-20T14:15:00-05:00",
+      "has_photo": 0,
+      "simulated": true
+    },
+    {
+      "id": "demo-003",
+      "type": "Árbol caído",
+      "sector": "Kennedy Norte",
+      "description": "Ejemplo: árbol sobre una vía secundaria. Se simula la coordinación de retiro y señalización.",
+      "lat": -2.153,
+      "lng": -79.899,
+      "status": "En atención",
+      "created_at": "2026-10-20T13:50:00-05:00",
+      "has_photo": 0,
+      "simulated": true
+    },
+    {
+      "id": "demo-004",
+      "type": "Daño en vía",
+      "sector": "Sauces",
+      "description": "Ejemplo: deterioro de calzada después de lluvias. Se propone inspección técnica del tramo.",
+      "lat": -2.117,
+      "lng": -79.888,
+      "status": "Pendiente",
+      "created_at": "2026-10-20T13:20:00-05:00",
+      "has_photo": 0,
+      "simulated": true
+    },
+    {
+      "id": "demo-005",
+      "type": "Inundación",
+      "sector": "Mucho Lote",
+      "description": "Ejemplo: agua acumulada en una calle residencial. Caso ficticio para visualizar priorización por sector.",
+      "lat": -2.079,
+      "lng": -79.923,
+      "status": "Verificado",
+      "created_at": "2026-10-20T12:45:00-05:00",
+      "has_photo": 0,
+      "simulated": true
+    },
+    {
+      "id": "demo-006",
+      "type": "Alcantarilla obstruida",
+      "sector": "Bastión Popular",
+      "description": "Ejemplo: sumidero cubierto de residuos. Se simula una solicitud de limpieza preventiva.",
+      "lat": -2.092,
+      "lng": -79.953,
+      "status": "En atención",
+      "created_at": "2026-10-20T12:10:00-05:00",
+      "has_photo": 0,
+      "simulated": true
+    },
+    {
+      "id": "demo-007",
+      "type": "Otro riesgo",
+      "sector": "Mapasingue Oeste",
+      "description": "Ejemplo: material suelto junto a una pendiente. Caso para mostrar la clasificación de otros riesgos.",
+      "lat": -2.141,
+      "lng": -79.94,
+      "status": "Pendiente",
+      "created_at": "2026-10-20T11:35:00-05:00",
+      "has_photo": 0,
+      "simulated": true
+    },
+    {
+      "id": "demo-008",
+      "type": "Inundación",
+      "sector": "Febres Cordero",
+      "description": "Ejemplo: anegamiento de una calle barrial. Se simula la revisión y confirmación de un reporte.",
+      "lat": -2.212,
+      "lng": -79.935,
+      "status": "Verificado",
+      "created_at": "2026-10-20T11:00:00-05:00",
+      "has_photo": 0,
+      "simulated": true
+    },
+    {
+      "id": "demo-009",
+      "type": "Daño en vía",
+      "sector": "Guasmo Sur",
+      "description": "Ejemplo: bache y agua estancada en una vía local. El cierre del caso es simulado para la presentación.",
+      "lat": -2.269,
+      "lng": -79.889,
+      "status": "Resuelto",
+      "created_at": "2026-10-20T10:25:00-05:00",
+      "has_photo": 0,
+      "simulated": true
+    },
+    {
+      "id": "demo-010",
+      "type": "Alcantarilla obstruida",
+      "sector": "Isla Trinitaria",
+      "description": "Ejemplo: drenaje con circulación reducida de agua. Se representa un reporte pendiente de revisión.",
+      "lat": -2.247,
+      "lng": -79.945,
+      "status": "Pendiente",
+      "created_at": "2026-10-20T09:50:00-05:00",
+      "has_photo": 0,
+      "simulated": true
+    }
+  ]
+}

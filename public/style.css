@@ -62,3 +62,5 @@ button:disabled{cursor:not-allowed}.intro .primary:disabled{opacity:1;background
 .weather-service .risk-context{background:#edf4ff;border-color:var(--blue)}.weather-service .risk-context strong{color:#234b86}.weather-service .risk-context p{color:#506b93}
 
 .traffic-service{border-top-color:var(--blue)}.traffic-service .eyebrow{color:var(--blue)}.traffic-service .risk-context{background:#edf4ff;border-color:var(--blue)}.traffic-service .risk-context strong{color:#234b86}.traffic-service .risk-context p{color:#506b93}
+
+.demo-mode .notice{border:2px solid #e46517;background:#fff0e5}.demo-mode .notice strong{font-size:15px}.demo-mode .notice p{font-size:12px;max-width:800px}.demo-row-label{display:block;font-size:9px;font-weight:700;color:#a33d08;letter-spacing:.5px;margin-top:6px}.status-blue{color:#24599e;background:#edf4ff;border-color:#c9dcf7}.demo-detail{padding:12px;border:1px solid #ffd0ae;border-radius:8px;background:#fff0e5;color:#8e3509}.demo-mode .stats article small{color:#8e3509}.demo-mode .legend{color:#98542e}.demo-mode #reportes{margin-bottom:24px}

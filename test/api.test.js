@@ -16,6 +16,7 @@ const post=data=>fetch(base+'/api/reports',{method:'POST',headers:{'Content-Type
 test('API, validación, fotografía y persistencia al reiniciar',async()=>{
 assert.equal((await fetch(base+'/api/health')).status,200);
 assert.deepEqual(await (await fetch(base+'/api/reports')).json(),[]);
+const demo=await (await fetch(base+'/demo-reports.json')).json();assert.equal(demo.demo,true);assert.equal(demo.reports.length,10);assert.ok(demo.reports.every(r=>r.simulated===true));assert.deepEqual(await (await fetch(base+'/api/reports')).json(),[]);
 assert.equal((await post({...valid,lat:0})).status,400);
 assert.equal((await post({...valid,description:'corto'})).status,400);
 assert.equal((await post({...valid,photo:'data:image/svg+xml;base64,AAAA'})).status,400);
