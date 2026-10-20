@@ -39,3 +39,7 @@ El flujo `.github/workflows/pages.yml` publica la versión informativa desde `ma
 ### Cartografía de Guayaquil
 
 La página incorpora un visor externo de Bing Maps centrado en Guayaquil y un enlace para abrir el mapa en otra pestaña. El visor necesita acceso del navegador a los servicios de Microsoft; su disponibilidad depende del proveedor. No recibe coordenadas de los reportes ni muestra alertas institucionales. La vista esquemática de los reportes se mantiene separada. También se conserva el enlace de Microsoft facilitado por el usuario como referencia; su redirección no pudo verificarse desde el entorno.
+
+### Servicio de Gestión de Riesgos
+
+Se enlaza el servicio `SUSCEPT_INUNDACIONES_Z/MapServer` de `sgrportal.gestionderiesgos.gob.ec`, aportado por el usuario. La sección permite abrir su visor `?f=jsapi` dentro de un panel o en otra pestaña y consultar sus metadatos `?f=pjson`. El iframe solo se activa al desplegar el panel. No se descargan ni se reinterpretan capas; no se supone cobertura, fecha, leyenda ni estado de alerta sin consultar los metadatos del proveedor. La susceptibilidad territorial no representa una inundación actual. El entorno bloqueó la consulta de este host, por lo que la carga externa y la posibilidad de incrustación no se verificaron. El acceso directo sigue disponible si el proveedor restringe los iframes.
